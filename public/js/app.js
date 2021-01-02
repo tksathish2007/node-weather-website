@@ -1,4 +1,4 @@
-console.log('App.js file loaded...')
+console.log('App.js file loaded')
 
 const searchFrom = document.querySelector('form')
 const searchInput = document.querySelector('input')

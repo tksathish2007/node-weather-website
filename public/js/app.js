@@ -27,7 +27,7 @@ searchFrom.addEventListener('submit', (e)=> {
     }
     console.log(search)
 
-    const url = encodeURI('http://localhost:3000/weather?search='+search)
+    const url = encodeURI('/weather?search='+search)
     fetch(url)
         .then((res) => {
             res.json().then((data)=>{

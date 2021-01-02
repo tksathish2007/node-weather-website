@@ -1,8 +1,4 @@
 # node-weather-website
 Node JS Weather App 
 
-/
-
-/about
-
-/help
+Heroku site: https://weather-app-node-tk.herokuapp.com/

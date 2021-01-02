@@ -16,13 +16,18 @@ const resetData = () => {
 }
 resetData()
 
+const updateError = (txt = '') => {    
+    errorSpan.textContent = txt
+}
+
 searchFrom.addEventListener('submit', (e)=> {
     e.preventDefault()
     resetData()
+    updateError('Loading...')
     
     const search = searchInput.value 
-    if(!search.trim()) {
-        errorSpan.textContent = 'Please enter location'
+    if(!search.trim()) {        
+        updateError('Please enter location')
         return false;
     }
     console.log(search)
@@ -33,9 +38,10 @@ searchFrom.addEventListener('submit', (e)=> {
             res.json().then((data)=>{
                 if(data.error) {
                     console.info(data.error)
-                    errorSpan.textContent = data.error
+                    updateError(data.error)
                 } else {
                     console.info(data)
+                    updateError('-')
                     locationSpan.textContent    = data.location
                     weatherSpan.textContent     = data.weather
                     temperatureSpan.textContent = data.temperature
